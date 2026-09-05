@@ -29,6 +29,35 @@ body {
     margin-top: 32px
 }
 
+.album-carousel {
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    --gap: 16px;
+    gap: var(--gap);
+    animation: scroll 20s linear infinite;
+}
+
+.album-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - var(--gap) / 2)); }
+}
+
+.album {
+    width: 256px;
+    height: 256px;
+}
 @media (min-width: 1200px) {
   .row {
     margin: 20px 200px;
