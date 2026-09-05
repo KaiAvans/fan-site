@@ -1,0 +1,36 @@
+
+body {
+    background-image: url('images/makemewonder.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+     background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.row {
+    display: flex;
+    background-color: #000000f6;
+    margin: 32px;
+    padding: 32px;
+    overflow: hidden;
+}
+
+.left-column {
+    height: 1000px;
+    margin-right: 32px;
+}
+
+.logo {
+    width: 256px;
+}
+
+.sidebar-buttons {
+    margin-top: 32px
+}
+
+@media (min-width: 1200px) {
+  .row {
+    margin: 20px 200px;
+  }
+}
