@@ -31,7 +31,10 @@ body {
 
 .album-carousel {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .carousel-track {
@@ -46,6 +49,19 @@ body {
     text-align: center;
     width: 50%;
     margin: 4px;
+    transition: transform .3s ease;
+}
+
+.album-container:hover {
+    transform: scale(1.06);
+}
+
+.album-container:has(~ .album-container:hover) {
+    transform: translateX(-8px);
+}
+
+.album-container:hover ~ .album-container {
+transform: translateX(8px);
 }
 
 .album-overlay {
@@ -64,6 +80,7 @@ body {
 .album-container:hover .album-overlay {
     opacity: 1;
 }
+
 
 .album-carousel:hover .carousel-track {
     animation-play-state: paused;
