@@ -1,16 +1,19 @@
-
+:root {
+    --animation-expressive-fast-spatial: cubic-bezier(0.42, 1.67, 0.21, 0.90);
+}
 body {
     background-image: url('images/makemewonder.gif');
     background-repeat: no-repeat;
     background-attachment: fixed;  
-     background-position: center;
+    background-position: center;
     background-size: cover;
     color: white;
+    font-family: "Outfit", sans-serif;
 }
 
 .row {
     display: flex;
-    background-color: #000000f6;
+    background-color: #000000f3;
     margin: 32px;
     padding: 32px;
     overflow: hidden;
@@ -43,13 +46,17 @@ body {
     width: max-content;
     animation: scroll 20s linear infinite;
 }
-
+.members-section {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+}
 .album-container {
     position: relative;
     text-align: center;
     width: 50%;
     margin: 4px;
-    transition: transform .3s ease;
+    transition: transform .3s var(--animation-expressive-fast-spatial);
 }
 
 .album-container:hover {
@@ -61,7 +68,7 @@ body {
 }
 
 .album-container:hover ~ .album-container {
-transform: translateX(8px);
+    transform: translateX(8px);
 }
 
 .album-overlay {
@@ -98,6 +105,35 @@ transform: translateX(8px);
     height: 256px;
     aspect-ratio: 1 1;
     display: block;
+}
+
+.member-container {
+    position: relative;
+    text-align: center;
+}
+
+.member-image {
+    height: 256px;
+    display: block;
+    z-index: 1;
+}
+
+.member-image-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 256px;
+    display: block;
+    z-index: 0;
+    opacity: 0;
+}
+
+.member-container:hover .member-image {
+    opacity: 0;
+}
+
+.member-container:hover .member-image-gif {
+    opacity: 1;
 }
 
 @keyframes scroll {
