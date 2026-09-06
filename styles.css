@@ -30,9 +30,7 @@ body {
 }
 
 .album-carousel {
-
     width: 100%;
-
     overflow: hidden;
 }
 
@@ -40,24 +38,56 @@ body {
     display: flex;
     flex-wrap: nowrap;
     width: max-content;
-    --gap: 16px;
-    gap: var(--gap);
     animation: scroll 20s linear infinite;
+}
+
+.album-container {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    margin: 4px;
+}
+
+.album-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000a0;
+}
+
+.album-container:hover .album-overlay {
+    opacity: 1;
 }
 
 .album-carousel:hover .carousel-track {
     animation-play-state: paused;
 }
 
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-50% - var(--gap) / 2)); }
+.album-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.album {
+.album-image {
     width: 256px;
     height: 256px;
+    aspect-ratio: 1 1;
+    display: block;
 }
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 @media (min-width: 1200px) {
   .row {
     margin: 20px 200px;
