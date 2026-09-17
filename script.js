@@ -22,7 +22,7 @@ function updateButton(language) {
     var button = document.getElementById("lang-toggle");
     if (button !== null) {
         if (language === "en") {
-            button.textContent = "日本語";
+            button.textContent = "JP";
         } else {
             button.textContent = "EN";
         }
