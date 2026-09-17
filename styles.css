@@ -21,12 +21,13 @@ body {
 }
 
 .left-column {
-    height: 1000px;
     margin-right: 32px;
 }
-
+.right-column {
+    min-width: 0
+}
 .logo {
-    width: 256px;
+    width: 128px;
 }
 
 .sidebar-buttons {
@@ -47,11 +48,13 @@ body {
     width: max-content;
     animation: scroll 20s linear infinite;
 }
+
 .members-section {
     display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
+    width: 100%;
+    flex-wrap: wrap;
 }
+
 .album-container {
     position: relative;
     text-align: center;

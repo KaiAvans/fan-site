@@ -9,9 +9,9 @@ function setLanguage(language) {
 
         // only switch to japanese if a translation exists, otherwise just default to english (some albums/text are always displayed in english)
         if (language === "ja" && japaneseText !== "" && japaneseText !== null) {
-            element.textContent = japaneseText;
+            element.innerHTML = japaneseText;
         } else {
-            element.textContent = englishText;
+            element.innerHTML = englishText;
         }
     }
     document.documentElement.setAttribute("lang", language);
