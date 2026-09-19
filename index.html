@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Official髭男dismのファンホームページ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <audio id="album-audio"></audio>
+    <div class="corner-casette-container" id="casette-player">
+        <div class="volume-slider-wrapper">
+            <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+        </div>
+        <img src="images/casette.png" alt="" class="corner-casette">
+        <img src="images/casette.gif" alt="" class="corner-casette-gif">
+    </div>
     <div class="row">
         <div class="left-column">
             <img src="images/logo.svg" alt="OFFICIAL HIGE DANDISM" class="logo">
             <h1></h1>
-            <!-- <div class="sidebar-buttons">
-                <p data-en="MEMBERS" data-ja="">MEMBERS</p>
-                <p data-en="MY FAVORITES" data-ja="">MY FAVORITES</p>
-                <p data-en="ON TOUR" data-ja="">ON TOUR</p>
-            </div> -->
+            <div class="sidebar-buttons">
+                <p><a href="https://higedan.com/news/list/7/8/?range=future_event_end_time&sort=asc&lang=en" target="_blank">ON TOUR</a></p>
+                <p><a href="https://open.spotify.com/playlist/4wpIX8C95VgTHT2ViHsu2q" target="_blank">MY FAVORITES</a></p>
+            </div>
         </div>
         <div class="right-column">
             <div class="top-header">
@@ -53,74 +60,74 @@
             </div>
             <div class="album-carousel">
                 <div class="carousel-track">
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/stardust.mp3">
                         <img src="images/stardust.jpeg" alt="stardust" class="album-image">
                           <div class="album-overlay">
                             <div class="album-text" data-en="STARDUST" data-ja="スターダスト">STARDUST</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/rashisa.mp3">
                         <img src="images/rashisa.jpeg" alt="rashisa" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="RASHISA" data-ja="らしさ">RASHISA</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/white-noise.mp3">
                         <img src="images/white-noise.jpeg" alt="white noise" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="WHITE NOISE" data-ja="ホワイトノイズ">WHITE NOISE</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/subtitle.mp3">
                         <img src="images/subtitle.jpeg" alt="subtitle" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="SUBTITLE" data-ja="">SUBTITLE</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/soulsoup.mp3">
                         <img src="images/soulsoup.jpeg" alt="soulsoup" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="SOULSOUP" data-ja="">SOULSOUP</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/elder-flower.mp3">
                         <img src="images/elder-flower.jpeg" alt="elder flower" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="ELDER FLOWER" data-ja="エルダーフラワー">ELDER FLOWER</div>
                         </div>
                     </div>
 
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/stardust.mp3">
                         <img src="images/stardust.jpeg" alt="stardust" class="album-image">
                           <div class="album-overlay">
                             <div class="album-text" data-en="STARDUST" data-ja="スターダスト">STARDUST</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/rashisa.mp3">
                         <img src="images/rashisa.jpeg" alt="rashisa" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="RASHISA" data-ja="らしさ">RASHISA</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/white-noise.mp3">
                         <img src="images/white-noise.jpeg" alt="white noise" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="WHITE NOISE" data-ja="ホワイトノイズ">WHITE NOISE</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/subtitle.mp3">
                         <img src="images/subtitle.jpeg" alt="subtitle" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="SUBTITLE" data-ja="">SUBTITLE</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/soulsoup.mp3">
                         <img src="images/soulsoup.jpeg" alt="soulsoup" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="SOULSOUP" data-ja="">SOULSOUP</div>
                         </div>
                     </div>
-                    <div class="album-container">
+                    <div class="album-container" data-audio="audio/elder-flower.mp3">
                         <img src="images/elder-flower.jpeg" alt="elder flower" class="album-image">
                         <div class="album-overlay">
                             <div class="album-text" data-en="ELDER FLOWER" data-ja="エルダーフラワー">ELDER FLOWER</div>
