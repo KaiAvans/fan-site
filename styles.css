@@ -3,13 +3,39 @@
 }
 
 body {
-    background-image: url('images/makemewonder.gif');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-position: center;
-    background-size: cover;
+    background-color: #000;
     color: white;
     font-family: "Outfit", sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/makemewonder.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(0px);
+    transition: filter 0.8s ease;
+    z-index: -1;
+}
+
+body.revealed::before {
+    filter: blur(16px);
+}
+.row {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+.row.revealed {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .corner-casette-container {
@@ -101,11 +127,11 @@ body.music-playing .corner-casette-container{
 
 .row {
     display: flex;
-    background-color: #000000f3;
+    background-color: #000000c0;
     margin: 32px;
     padding: 32px;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 88vh;
 }
 
 .left-column {
