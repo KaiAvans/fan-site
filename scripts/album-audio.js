@@ -72,7 +72,7 @@ const updateVolumeSlider = (el) => {
     albumAudio.volume = volumeSlider.value;
     if (isMuted && volumeSlider.value > 0) {
         isMuted = false;
-        casettePlayer.classList.remove('muted');
+        document.body.classList.remove('muted');
     }
 };
 
