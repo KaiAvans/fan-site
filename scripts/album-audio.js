@@ -42,15 +42,7 @@ albumAudio.addEventListener('ended', () => {
 });
 
 albumAudio.volume = volumeSlider.value;
-
-volumeSlider.addEventListener('input', () => {
-    albumAudio.volume = volumeSlider.value;
-    if (isMuted && volumeSlider.value > 0) {
-        isMuted = false;
-        casettePlayer.classList.remove('muted');
-    }
-});
-
+volumeSlider.addEventListener('input', (e) => updateVolumeSlider(e.target));
 volumeSlider.addEventListener('click', (e) => e.stopPropagation());
 
 let previousVolume = volumeSlider.value;
@@ -69,4 +61,19 @@ casettePlayer.addEventListener('click', () => {
         isMuted = false;
         document.body.classList.remove('muted');
     }
+    updateVolumeSlider(volumeSlider);
 });
+
+const updateVolumeSlider = (el) => {
+    const min = el.min || 0;
+    const max = el.max || 100;
+    const pct = (el.value - min) / (max - min) * 100;
+    el.style.setProperty('--range-pct', pct + '%');
+    albumAudio.volume = volumeSlider.value;
+    if (isMuted && volumeSlider.value > 0) {
+        isMuted = false;
+        casettePlayer.classList.remove('muted');
+    }
+};
+
+updateVolumeSlider(volumeSlider);

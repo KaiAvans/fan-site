@@ -89,29 +89,32 @@ body.music-playing .corner-casette-container{
 }
 
 .volume-slider::-webkit-slider-runnable-track {
-    background: #404040f3;
+    background: linear-gradient(to top, #ffffff var(--range-pct, 0%), #404040f3 var(--range-pct, 0%));
     border-radius: 4px;
+    width: 4px;
 }
 
 .volume-slider::-moz-range-track {
-    background: #404040f3;
+    background: linear-gradient(to top, #ffffff var(--range-pct, 0%), #404040f3 var(--range-pct, 0%));
     border-radius: 4px;
+    width: 4px;
 }
 
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: #ffffff;
     width: 16px;
-    height: 16px;
-    border-radius: 50%;
+    height: 3px;
+    border-radius: 2px;
     cursor: pointer;
+    margin-left: -6px;
 }
 
 .volume-slider::-moz-range-thumb {
     background: #ffffff;
     width: 16px;
-    height: 16px;
-    border-radius: 50%;
+    height: 3px;
+    border-radius: 2px;
     border: none;
     cursor: pointer;
 }
