@@ -146,8 +146,13 @@ body.music-playing .corner-casette-container{
     pointer-events: auto;
     opacity: 1;
 }
+
 .left-column {
     margin-right: 32px;
+}
+
+.left-column .lang-toggle {
+    display: none;
 }
 
 .right-column {
@@ -168,7 +173,8 @@ body.music-playing .corner-casette-container{
     margin: 0;
 }
 
-.top-header .lang-toggle {
+.lang-toggle {
+    margin-left: auto;
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -309,6 +315,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    user-select: none;
 }
 
 .equalizer {
@@ -418,16 +425,37 @@ body.music-playing .now-playing-banner {
 @media (max-width: 800px) {
     .row {
         flex-direction: column;
+        margin: 0
     }
 
+    .logo {
+        width: 64px;
+    }
     .left-column {
         display: flex;
+        align-items: center;
         flex-direction: row;
         gap: 16px;
         margin-right: 0;
         margin-bottom: 32px;
     }
+    .left-column .lang-toggle {
+        display: block;
+    }
+    .top-header .lang-toggle {
+        display: none;
+    }
+    .album-image {
+        width: 128px;
+        height: 128px;
+    }
+    .album-container:has(~ .album-container:hover) {
+        transform: translateX(-4px);
+    }
 
+    .album-container:hover ~ .album-container {
+        transform: translateX(4px);
+    }
     .sidebar-buttons {
         display: flex;
         flex-direction: row;

@@ -2,12 +2,14 @@ const track = document.querySelector('.carousel-track');
 const prevBtn = document.getElementById('carousel-prev');
 const nextBtn = document.getElementById('carousel-next');
 
-const scrollAmount = 600;
+function getScrollAmount() {
+    return window.innerWidth * 0.6;
+}
 
 prevBtn.addEventListener('click', () => {
-  track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
 });
 
 nextBtn.addEventListener('click', () => {
-  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
 });

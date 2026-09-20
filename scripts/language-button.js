@@ -7,7 +7,6 @@ function setLanguage(language) {
         var englishText = element.getAttribute("data-en");
         var japaneseText = element.getAttribute("data-ja");
 
-        // only switch to japanese if a translation exists, otherwise just default to english (some albums/text are always displayed in english)
         if (language === "ja" && japaneseText !== "" && japaneseText !== null) {
             element.innerHTML = japaneseText;
         } else {
@@ -20,19 +19,21 @@ function setLanguage(language) {
 }
 
 function updateButton(language) {
-    var button = document.getElementById("lang-toggle");
-    if (button !== null) {
-        if (language === "en") {
-            button.textContent = "JP";
-        } else {
-            button.textContent = "EN";
+    var buttons = document.querySelectorAll(".lang-toggle");
+    buttons.forEach(function (button) {
+        if (button !== null) {
+            if (language === "en") {
+                button.textContent = "JP";
+            } else {
+                button.textContent = "EN";
+            }
         }
-    }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var button = document.getElementById("lang-toggle");
-    if (button !== null) {
+var buttons = document.querySelectorAll(".lang-toggle");
+    buttons.forEach(function (button) {
         button.addEventListener("click", function () {
             var currentLanguage = document.documentElement.getAttribute("lang");
             if (currentLanguage === "en") {
@@ -42,5 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 setLanguage("en");
             }
         });
-    }
+    });
 });
