@@ -27,16 +27,7 @@ body::before {
 body.revealed::before {
     filter: blur(16px);
 }
-.row {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.8s ease;
-}
 
-.row.revealed {
-    pointer-events: auto;
-    opacity: 1;
-}
 
 .corner-casette-container {
     position: fixed;
@@ -132,33 +123,46 @@ body.music-playing .corner-casette-container{
     padding: 32px;
     overflow: hidden;
     min-height: 88vh;
+    opacity: 0;
+    justify-content: center;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
 }
 
+.row.revealed {
+    pointer-events: auto;
+    opacity: 1;
+}
 .left-column {
     margin-right: 32px;
 }
 
 .right-column {
-    min-width: 0
+    min-width: 0;
+    flex-grow: 1;
 }
 
 .top-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
 }
 
 .top-header h2 {
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
 }
 
 .top-header .lang-toggle {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
 }
 
 .lang-toggle:hover { 
@@ -166,9 +170,9 @@ body.music-playing .corner-casette-container{
 }
 
 .top-header p {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
 }
 .logo {
     width: 128px;
@@ -184,6 +188,7 @@ body.music-playing .corner-casette-container{
 
 .album-carousel {
     width: 100%;
+    
     overflow-x: hidden;
     overflow-y: visible;
     padding-top: 12px;
@@ -193,7 +198,13 @@ body.music-playing .corner-casette-container{
 .carousel-track {
     display: flex;
     flex-wrap: nowrap;
-    width: max-content;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 0;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
 }
 
 .members-section {
@@ -210,6 +221,7 @@ body.music-playing .corner-casette-container{
     aspect-ratio: 1 1;
     margin: 4px;
     transition: transform .3s var(--animation-expressive-fast-spatial);
+    flex-shrink: 0;
 }
 
 .album-container:hover {
@@ -249,6 +261,20 @@ body.music-playing .corner-casette-container{
 
 .album-container.playing .album-text {
     opacity: 0;
+}
+
+.carousel-arrow {
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .album-carousel:hover .carousel-track {
