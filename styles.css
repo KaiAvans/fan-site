@@ -165,7 +165,7 @@ body.music-playing .corner-casette-container{
     border-radius: 32px;
 }
 
-.lang-toggle:hover { 
+button:hover { 
     cursor: pointer;
 }
 
