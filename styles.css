@@ -88,10 +88,12 @@ body.music-playing .corner-casette-container{
     background: transparent;
 }
 
+/* slightly different slider designs on chrome vs firefox, due to differing slider properties between browsers */
 .volume-slider::-webkit-slider-runnable-track {
     background: linear-gradient(to top, #ffffff var(--range-pct, 0%), #404040f3 var(--range-pct, 0%));
-    border-radius: 4px;
-    width: 3px;
+    border-radius: 6px;
+    overflow: hidden;
+    /* width: 4px; */
 }
 
 .volume-slider::-moz-range-track {
@@ -104,21 +106,29 @@ body.music-playing .corner-casette-container{
     -webkit-appearance: none;
     background: #ffffff;
     width: 16px;
-    height: 3px;
-    border-radius: 2px;
+    height: 0px;
+    /* border-radius: 2px; */
     cursor: pointer;
-    margin-left: -6px;
+    transition: width .1s
 }
 
 .volume-slider::-moz-range-thumb {
     background: #ffffff;
-    width: 16px;
+    width: 15px;
     height: 3px;
     border-radius: 2px;
     border: none;
     cursor: pointer;
+    transition: width .1s
 }
 
+.volume-slider:hover::-webkit-slider-thumb {
+    width: 18px;
+}
+
+.volume-slider:hover::-moz-range-thumb {
+    width: 20px;
+}
 .row {
     display: flex;
     background-color: #000000df;
