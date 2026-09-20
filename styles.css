@@ -127,7 +127,7 @@ body.music-playing .corner-casette-container{
 
 .row {
     display: flex;
-    background-color: #000000c0;
+    background-color: #000000df;
     margin: 32px;
     padding: 32px;
     overflow: hidden;
@@ -325,8 +325,8 @@ body.music-playing .member-image-gif {
 }
 
 @media (max-width: 1330px) {
-  .members-section {
-    grid-template-columns: repeat(2, 1fr);
+    .members-section {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
