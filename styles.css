@@ -281,13 +281,23 @@ button:hover {
     width: 32px;
     height: 32px;
     border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 .carousel-controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.carousel-controls .arrow {
+    width: 16px;
+    height: 16px;
+    display: block;
 }
 
 .album-carousel:hover .carousel-track {
