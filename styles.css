@@ -5,7 +5,7 @@
 body {
     background-color: #000;
     color: white;
-    font-family: "Outfit", sans-serif;
+    font-family: "Outfit", "Noto Sans", sans-serif;
 }
 
 body::before {
@@ -366,6 +366,42 @@ body.music-playing .member-image {
 
 body.music-playing .member-image-gif {
     opacity: 1;
+}
+
+.now-playing-banner {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    opacity: 0;
+    margin-top: 16px;
+    max-height: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+body.music-playing .now-playing-banner {
+    opacity: 1;
+    max-height: 24px;
+    height: 24px;
+}
+
+.now-playing-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.now-playing-item {
+    padding-right: 40px;
+    flex-shrink: 0;
+    font-size: 14px;
 }
 
 @keyframes scroll {

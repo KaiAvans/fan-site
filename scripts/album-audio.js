@@ -1,8 +1,21 @@
-
 const albumAudio = document.getElementById('album-audio');
 const albumContainers = document.querySelectorAll('.album-container');
 const casettePlayer = document.getElementById('casette-player');
 const volumeSlider = document.getElementById('volume-slider');
+const nowPlayingTrack = document.getElementById('now-playing-track');
+
+function updateNowPlayingText() {
+    const activeContainer = Array.from(albumContainers).find(container => {
+        const src = container.dataset.audio;
+        return src && albumAudio.src.endsWith(src);
+    });
+
+    if (activeContainer && nowPlayingTrack) {
+        const songTitle = activeContainer.querySelector('.album-text').textContent.trim();
+        const snippet = `<span class="now-playing-item">NOW PLAYING: ${songTitle} </span><span class="now-playing-item">&bull;</span>`;
+        nowPlayingTrack.innerHTML = snippet.repeat(12);
+    }
+}
 
 function updatePlayingStateForEachAlbum() {
     albumContainers.forEach(container => {
@@ -22,12 +35,14 @@ albumContainers.forEach(container => {
         } else {
             albumAudio.src = src;
             albumAudio.play();
+            updateNowPlayingText();
         }
     });
 });
 
 albumAudio.addEventListener('play', () => {
     document.body.classList.add('music-playing');
+    updateNowPlayingText();
     updatePlayingStateForEachAlbum();
 });
 
@@ -50,7 +65,7 @@ let isMuted = false;
 
 casettePlayer.addEventListener('click', () => {
     if (!isMuted) {
-        previousVolume = volumeSlider.value
+        previousVolume = volumeSlider.value;
         volumeSlider.value = 0;
         albumAudio.volume = 0;
         isMuted = true;
@@ -69,10 +84,14 @@ const updateVolumeSlider = (el) => {
     const max = el.max || 100;
     const pct = (el.value - min) / (max - min) * 100;
     el.style.setProperty('--range-pct', pct + '%');
-    albumAudio.volume = volumeSlider.value;
-    if (isMuted && volumeSlider.value > 0) {
+    albumAudio.volume = el.value;
+
+    if (Number(el.value) > 0) {
         isMuted = false;
         document.body.classList.remove('muted');
+    } else {
+        isMuted = true;
+        document.body.classList.add('muted');
     }
 };
 

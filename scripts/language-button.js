@@ -16,6 +16,7 @@ function setLanguage(language) {
     }
     document.documentElement.setAttribute("lang", language);
     updateButton(language);
+    updateNowPlayingText()
 }
 
 function updateButton(language) {
