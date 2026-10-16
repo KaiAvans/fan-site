@@ -15,7 +15,7 @@ function setLanguage(language) {
     }
     document.documentElement.setAttribute("lang", language);
     updateButton(language);
-    updateNowPlayingText()
+    updateNowPlayingText();
 }
 
 function updateButton(language) {
@@ -24,22 +24,25 @@ function updateButton(language) {
         if (button !== null) {
             if (language === "en") {
                 button.textContent = "JP";
+                button.style.color = "black";
+                button.style.backgroundColor = "white";
             } else {
                 button.textContent = "EN";
+                button.style.backgroundColor = "black";
+                button.style.color = "white";
             }
         }
     });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-var buttons = document.querySelectorAll(".lang-toggle");
+    var buttons = document.querySelectorAll(".lang-toggle");
     buttons.forEach(function (button) {
         button.addEventListener("click", function () {
             var currentLanguage = document.documentElement.getAttribute("lang");
             if (currentLanguage === "en") {
                 setLanguage("ja");
-            }
-            else if (currentLanguage === "ja") {
+            } else if (currentLanguage === "ja") {
                 setLanguage("en");
             }
         });

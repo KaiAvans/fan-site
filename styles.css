@@ -1,5 +1,5 @@
 :root {
-    --animation-expressive-fast-spatial: cubic-bezier(0.42, 1.67, 0.21, 0.90);
+    --animation-expressive-fast-spatial: cubic-bezier(0.42, 1.67, 0.21, 0.9);
 }
 
 body {
@@ -15,7 +15,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/makemewonder.gif');
+    background-image: url("images/makemewonder.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -38,7 +38,9 @@ body.revealed::before {
     height: 64px;
     cursor: pointer;
     transform: translateY(10px);
-    transition: opacity .25s ease, transform .25s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
     pointer-events: none;
 }
 
@@ -67,7 +69,7 @@ body.music-playing:not(body.muted) .corner-casette-gif {
     transform: translateX(-50%);
 }
 
-body.music-playing .corner-casette-container{
+body.music-playing .corner-casette-container {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
@@ -80,8 +82,8 @@ body.music-playing .corner-casette-container{
     height: 100px;
     cursor: pointer;
     outline: none;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
@@ -89,14 +91,22 @@ body.music-playing .corner-casette-container{
 
 /* slightly different slider designs on chrome vs firefox, due to differing slider properties between browsers */
 .volume-slider::-webkit-slider-runnable-track {
-    background: linear-gradient(to top, #ffffff var(--range-pct, 0%), #404040f3 var(--range-pct, 0%));
+    background: linear-gradient(
+        to top,
+        #ffffff var(--range-pct, 0%),
+        #404040f3 var(--range-pct, 0%)
+    );
     border-radius: 6px;
     overflow: hidden;
     /* width: 4px; */
 }
 
 .volume-slider::-moz-range-track {
-    background: linear-gradient(to top, #ffffff var(--range-pct, 0%), #404040f3 var(--range-pct, 0%));
+    background: linear-gradient(
+        to top,
+        #ffffff var(--range-pct, 0%),
+        #404040f3 var(--range-pct, 0%)
+    );
     border-radius: 4px;
     width: 3px;
 }
@@ -108,7 +118,7 @@ body.music-playing .corner-casette-container{
     height: 0px;
     /* border-radius: 2px; */
     cursor: pointer;
-    transition: width .1s
+    transition: width 0.1s;
 }
 
 .volume-slider::-moz-range-thumb {
@@ -118,7 +128,7 @@ body.music-playing .corner-casette-container{
     border-radius: 2px;
     border: none;
     cursor: pointer;
-    transition: width .1s
+    transition: width 0.1s;
 }
 
 .volume-slider:hover::-webkit-slider-thumb {
@@ -183,7 +193,7 @@ body.music-playing .corner-casette-container{
     border-radius: 32px;
 }
 
-button:hover { 
+button:hover {
     cursor: pointer;
 }
 
@@ -206,7 +216,7 @@ button:hover {
 
 .album-carousel {
     width: 100%;
-    
+
     overflow-x: hidden;
     overflow-y: visible;
     padding-top: 12px;
@@ -238,7 +248,7 @@ button:hover {
     text-align: center;
     aspect-ratio: 1 1;
     margin: 4px;
-    transition: transform .3s var(--animation-expressive-fast-spatial);
+    transition: transform 0.3s var(--animation-expressive-fast-spatial);
     flex-shrink: 0;
 }
 
@@ -264,7 +274,7 @@ button:hover {
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
     background-color: #000000a0;
 }
 
@@ -290,6 +300,17 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+
+.carousel-arrow.prev {
+    background-image: url("images/icons/arrow_back.svg");
+}
+
+.carousel-arrow.next {
+    background-image: url("images/icons/arrow_forward.svg");
 }
 
 .carousel-controls {
@@ -297,12 +318,6 @@ button:hover {
     justify-content: flex-end;
     gap: 8px;
     margin-bottom: 10px;
-}
-
-.carousel-controls .arrow {
-    width: 16px;
-    height: 16px;
-    display: block;
 }
 
 .album-carousel:hover .carousel-track {
@@ -389,7 +404,9 @@ body.music-playing .member-image-gif {
     pointer-events: none;
     align-items: center;
     white-space: nowrap;
-    transition: opacity 0.4s ease, max-height 0.4s ease;
+    transition:
+        opacity 0.4s ease,
+        max-height 0.4s ease;
 }
 
 body.music-playing .now-playing-banner {
@@ -413,8 +430,12 @@ body.music-playing .now-playing-banner {
 }
 
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 @media (max-width: 1330px) {
@@ -426,7 +447,7 @@ body.music-playing .now-playing-banner {
 @media (max-width: 800px) {
     .row {
         flex-direction: column;
-        margin: 0
+        margin: 0;
     }
 
     .logo {

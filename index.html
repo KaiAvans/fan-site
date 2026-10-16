@@ -1,125 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official髭男dismのファンホームページ</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <audio id="album-audio"></audio>
-    <div class="corner-casette-container" id="casette-player">
-        <div class="volume-slider-wrapper">
-            <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Outfit"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+        />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Official髭男dismのファンホームページ</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <audio id="album-audio"></audio>
+        <div class="corner-casette-container" id="casette-player">
+            <div class="volume-slider-wrapper">
+                <input
+                    type="range"
+                    id="volume-slider"
+                    class="volume-slider"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                />
+            </div>
+            <img src="images/casette.png" alt="" class="corner-casette" />
+            <img src="images/casette.gif" alt="" class="corner-casette-gif" />
         </div>
-        <img src="images/casette.png" alt="" class="corner-casette">
-        <img src="images/casette.gif" alt="" class="corner-casette-gif">
-    </div>
-    <div class="row">
-        <div class="left-column">
-            <img src="images/logo.svg" alt="OFFICIAL HIGE DANDISM" class="logo">
-            <h1></h1>
-            <div class="sidebar-buttons">
-                <p><a href="https://higedan.com/news/list/7/8/?range=future_event_end_time&sort=asc&lang=en" target="_blank">ON TOUR</a></p>
-                <p><a href="https://open.spotify.com/playlist/4wpIX8C95VgTHT2ViHsu2q" target="_blank">MY FAVORITES</a></p>
+        <div class="row">
+            <div class="left-column">
+                <img
+                    src="images/logo.svg"
+                    alt="OFFICIAL HIGE DANDISM"
+                    class="logo"
+                />
+                <h1></h1>
+                <div class="sidebar-buttons">
+                    <p>
+                        <a
+                            href="https://higedan.com/news/list/7/8/?range=future_event_end_time&sort=asc&lang=en"
+                            target="_blank"
+                            >ON TOUR</a
+                        >
+                    </p>
+                    <p>
+                        <a
+                            href="https://open.spotify.com/playlist/4wpIX8C95VgTHT2ViHsu2q"
+                            target="_blank"
+                            >MY FAVORITES</a
+                        >
+                    </p>
+                </div>
+                <button id="lang-toggle" class="lang-toggle" type="button">
+                    JP
+                </button>
             </div>
-            <button id="lang-toggle" class="lang-toggle" type="button">JP</button>
+            <div class="right-column">
+                <div class="top-header">
+                    <h2
+                        data-en="WELCOME to my official OFFICIAL HIGE DANDISM fan site!"
+                        data-ja="ボクのオフィシャルOFFICIAL髭男DISMのファンホームページへようこそ！"
+                    >
+                        WELCOME to my official OFFICIAL HIGE DANDISM fan site!
+                    </h2>
+                    <p
+                        data-en="The band OFFICIAL HIGE DANDISM (HIGEDAN) was formed in 2012 by Satoshi Fujihara. They have maintained the same four-member lineup since they formed. Click an album cover to play a song!"
+                        data-ja="Official髭男dism（ヒゲダン）は、2012年に藤原聡によって結成されたバンドです。結成以来、4人のメンバー構成は変わっていません。アルバムをクリックして曲を再生しましょう！"
+                    >
+                        The band OFFICIAL HIGE DANDISM (HIGEDAN) was formed in
+                        2012 by Satoshi Fujihara. They have maintained the same
+                        four-member lineup since they formed. Click an album
+                        cover to play a song!
+                    </p>
+                    <button id="lang-toggle" class="lang-toggle" type="button">
+                        JP
+                    </button>
+                </div>
+                <div class="members-section">
+                    <div class="member-container">
+                        <img
+                            src="images/members/satoshi.png"
+                            alt="satoshi"
+                            class="member-image"
+                        />
+                        <img
+                            src="images/members/satoshi.gif"
+                            class="member-image-gif"
+                        />
+                        <p data-en="VOCALS" data-ja="ボーカル">VOCALS</p>
+                        <h3 data-en="SATOSHI FUJIWARA" data-ja="藤原悟">
+                            SATOSHI FUJIWARA
+                        </h3>
+                    </div>
+                    <div class="member-container">
+                        <img
+                            src="images/members/daisuke.png"
+                            alt="daisuke"
+                            class="member-image"
+                        />
+                        <img
+                            src="images/members/daisuke.gif"
+                            class="member-image-gif"
+                        />
+                        <p data-en="GUITAR" data-ja="ギター">GUITAR</p>
+                        <h3 data-en="DAISUKE OZASA" data-ja="小笹大輔">
+                            DAISUKE OZASA
+                        </h3>
+                    </div>
+                    <div class="member-container">
+                        <img
+                            src="images/members/masaki.png"
+                            alt="masaki"
+                            class="member-image"
+                        />
+                        <img
+                            src="images/members/masaki.gif"
+                            class="member-image-gif"
+                        />
+                        <p data-en="DRUMS" data-ja="ドラム">DRUMS</p>
+                        <h3 data-en="MASAKI MATSUURA" data-ja="松浦匡希">
+                            MASAKI MATSUURA
+                        </h3>
+                    </div>
+                    <div class="member-container">
+                        <img
+                            src="images/members/makoto.png"
+                            alt="masaki"
+                            class="member-image"
+                        />
+                        <img
+                            src="images/members/makoto.gif"
+                            class="member-image-gif"
+                        />
+                        <p data-en="BASS" data-ja="ベース">BASS</p>
+                        <h3 data-en="MAKOTO NARAZAWA" data-ja="楢﨑誠">
+                            MAKOTO NARAZAWA
+                        </h3>
+                    </div>
+                </div>
+                <div class="album-carousel">
+                    <div class="carousel-controls">
+                        <button
+                            class="carousel-arrow prev"
+                            id="carousel-prev"
+                            aria-label="Previous"
+                        ></button>
+                        <button
+                            class="carousel-arrow next"
+                            id="carousel-next"
+                            aria-label="Next"
+                        ></button>
+                    </div>
+                    <div class="carousel-track">
+                        <div
+                            class="album-container"
+                            data-audio="audio/stardust.mp3"
+                        >
+                            <img
+                                src="images/albums/stardust.jpeg"
+                                alt="stardust"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="STARDUST"
+                                    data-ja="スターダスト"
+                                >
+                                    STARDUST
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="album-container"
+                            data-audio="audio/rashisa.mp3"
+                        >
+                            <img
+                                src="images/albums/rashisa.jpeg"
+                                alt="rashisa"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="RASHISA"
+                                    data-ja="らしさ"
+                                >
+                                    RASHISA
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="album-container"
+                            data-audio="audio/white-noise.mp3"
+                        >
+                            <img
+                                src="images/albums/white-noise.jpeg"
+                                alt="white noise"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="WHITE NOISE"
+                                    data-ja="ホワイトノイズ"
+                                >
+                                    WHITE NOISE
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="album-container"
+                            data-audio="audio/subtitle.mp3"
+                        >
+                            <img
+                                src="images/albums/subtitle.jpeg"
+                                alt="subtitle"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="SUBTITLE"
+                                    data-ja=""
+                                >
+                                    SUBTITLE
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="album-container"
+                            data-audio="audio/soulsoup.mp3"
+                        >
+                            <img
+                                src="images/albums/soulsoup.jpeg"
+                                alt="soulsoup"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="SOULSOUP"
+                                    data-ja=""
+                                >
+                                    SOULSOUP
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="album-container"
+                            data-audio="audio/elder-flower.mp3"
+                        >
+                            <img
+                                src="images/albums/elder-flower.jpeg"
+                                alt="elder flower"
+                                class="album-image"
+                            />
+                            <div class="album-overlay">
+                                <div
+                                    class="album-text"
+                                    data-en="ELDER FLOWER"
+                                    data-ja="エルダーフラワー"
+                                >
+                                    ELDER FLOWER
+                                </div>
+                                <img
+                                    src="images/icons/equalizer.svg"
+                                    class="equalizer"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="now-playing-banner" id="now-playing-banner">
+                    <div class="now-playing-track" id="now-playing-track"></div>
+                </div>
+            </div>
         </div>
-        <div class="right-column">
-            <div class="top-header">
-                <h2 data-en="WELCOME to my official OFFICIAL HIGE DANDISM fan site!" data-ja="ボクのオフィシャルOFFICIAL髭男DISMのファンホームページへようこそ！">WELCOME to my official OFFICIAL HIGE DANDISM fan site!</h2>
-                <p data-en="The band OFFICIAL HIGE DANDISM (HIGEDAN) was formed in 2012 by Satoshi Fujihara. They have maintained the same four-member lineup since they formed. Click an album cover to play a song!" 
-                data-ja="Official髭男dism（ヒゲダン）は、2012年に藤原聡によって結成されたバンドです。結成以来、4人のメンバー構成は変わっていません。アルバムをクリックして曲を再生しましょう！">
-                    The band OFFICIAL HIGE DANDISM (HIGEDAN) was formed in 2012 by Satoshi Fujihara. They have maintained the same four-member lineup since they formed. Click an album cover to play a song!</p>
-                <button id="lang-toggle" class="lang-toggle" type="button">JP</button>
-            </div>
-            <div class="members-section">
-                <div class="member-container">
-                    <img src="images/members/satoshi.png" alt="satoshi" class="member-image">
-                    <img src="images/members/satoshi.gif" class="member-image-gif">
-                    <p data-en="VOCALS" data-ja="ボーカル">VOCALS</p>
-                    <h3 data-en="SATOSHI FUJIWARA" data-ja="藤原悟">SATOSHI FUJIWARA</h3>
-                </div>
-                <div class="member-container">
-                    <img src="images/members/daisuke.png" alt="daisuke" class="member-image">
-                    <img src="images/members/daisuke.gif" class="member-image-gif">
-                    <p data-en="GUITAR" data-ja="ギター">GUITAR</p>
-                    <h3 data-en="DAISUKE OZASA" data-ja="小笹大輔">DAISUKE OZASA</h3>
-                </div>
-                <div class="member-container">
-                    <img src="images/members/masaki.png" alt="masaki" class="member-image">
-                    <img src="images/members/masaki.gif" class="member-image-gif">
-                    <p data-en="DRUMS" data-ja="ドラム">DRUMS</p>
-                    <h3 data-en="MASAKI MATSUURA" data-ja="松浦匡希">MASAKI MATSUURA</h3>
-                </div>
-                <div class="member-container">
-                    <img src="images/members/makoto.png" alt="masaki" class="member-image">
-                    <img src="images/members/makoto.gif" class="member-image-gif">
-                    <p data-en="BASS" data-ja="ベース">BASS</p>
-                    <h3 data-en="MAKOTO NARAZAWA" data-ja="楢﨑誠">MAKOTO NARAZAWA</h3>
-                </div>
-            </div>
-            <div class="album-carousel">
-                <div class="carousel-controls">
-                    <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous"><img src="images/icons/arrow_back.svg" class="arrow"></button>
-                    <button class="carousel-arrow next" id="carousel-next" aria-label="Next"><img src="images/icons/arrow_forward.svg" class="arrow"></button>
-                </div>
-                <div class="carousel-track">
-                    <div class="album-container" data-audio="audio/stardust.mp3">
-                        <img src="images/albums/stardust.jpeg" alt="stardust" class="album-image">
-                          <div class="album-overlay">
-                            <div class="album-text" data-en="STARDUST" data-ja="スターダスト">STARDUST</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                    <div class="album-container" data-audio="audio/rashisa.mp3">
-                        <img src="images/albums/rashisa.jpeg" alt="rashisa" class="album-image">
-                        <div class="album-overlay">
-                            <div class="album-text" data-en="RASHISA" data-ja="らしさ">RASHISA</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                    <div class="album-container" data-audio="audio/white-noise.mp3">
-                        <img src="images/albums/white-noise.jpeg" alt="white noise" class="album-image">
-                        <div class="album-overlay">
-                            <div class="album-text" data-en="WHITE NOISE" data-ja="ホワイトノイズ">WHITE NOISE</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                    <div class="album-container" data-audio="audio/subtitle.mp3">
-                        <img src="images/albums/subtitle.jpeg" alt="subtitle" class="album-image">
-                        <div class="album-overlay">
-                            <div class="album-text" data-en="SUBTITLE" data-ja="">SUBTITLE</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                    <div class="album-container" data-audio="audio/soulsoup.mp3">
-                        <img src="images/albums/soulsoup.jpeg" alt="soulsoup" class="album-image">
-                        <div class="album-overlay">
-                            <div class="album-text" data-en="SOULSOUP" data-ja="">SOULSOUP</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                    <div class="album-container" data-audio="audio/elder-flower.mp3">
-                        <img src="images/albums/elder-flower.jpeg" alt="elder flower" class="album-image">
-                        <div class="album-overlay">
-                            <div class="album-text" data-en="ELDER FLOWER" data-ja="エルダーフラワー">ELDER FLOWER</div>
-                            <img src="images/icons/equalizer.svg" class="equalizer">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="now-playing-banner" id="now-playing-banner">
-                <div class="now-playing-track" id="now-playing-track"></div>
-            </div>
-        </div>
-    </div>
-    <script src="scripts/language-button.js"></script>
-    <script src="scripts/album-audio.js"></script>
-    <script src="scripts/reveal-contents.js"></script>
-    <script src="scripts/carousel-buttons.js"></script>
-</body>
+        <script src="scripts/language-button.js"></script>
+        <script src="scripts/album-audio.js"></script>
+        <script src="scripts/reveal-contents.js"></script>
+        <script src="scripts/carousel-buttons.js"></script>
+    </body>
 </html>
